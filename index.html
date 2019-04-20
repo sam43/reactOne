@@ -9,7 +9,7 @@
         <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
         <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-        <title>ReactFirst</title>
+        <title>React First</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
@@ -26,15 +26,18 @@
                     name: 'Saadat',
                     phone: '012211222112'
                 }
-                handleButtonClick(e) {
-                    console.log(e.target);
+                handleButtonClick = (e) => {
+                    this.setState({
+                        name: 'Yamaha RX'
+                    })
+                    console.log(this.state);
                 }
 
-                handleHover(e) {
+                handleHover = (e) => {
                     console.log(e.target, e.pageX);
                 }
 
-                handleCopyText(e) {
+                handleCopyText = (e) => {
                     console.log("Try not to copy! Be nice and good.");
                 }
 
@@ -44,6 +47,7 @@
                             <h1>Hey there React me... here112222</h1>
                             <button onClick={this.handleButtonClick}>Click me</button>
                             <button onMouseOver={this.handleHover}>Hover me</button>
+                            <p>My name is {this.state.name}. My contact number is {this.state.phone}.</p>
                             <p onCopy={this.handleCopyText}>Don't copy this text. Try on your own.</p>
                         </div>
                     )
